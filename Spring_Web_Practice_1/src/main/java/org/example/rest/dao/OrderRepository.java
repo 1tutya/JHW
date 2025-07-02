@@ -6,4 +6,10 @@ import java.util.List;
 
 public interface OrderRepository {
     List<Order> findAll();
+
+    Order findByID(Integer id);
+
+    Order save(Order order);
+
+    void delete(Integer id);
 }
