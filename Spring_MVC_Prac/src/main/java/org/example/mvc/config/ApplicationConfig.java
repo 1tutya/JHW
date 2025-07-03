@@ -1,6 +1,7 @@
 package org.example.mvc.config;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -60,5 +61,10 @@ public class ApplicationConfig {
       HibernateTransactionManager transactionManager = new HibernateTransactionManager();
       transactionManager.setSessionFactory(sessionFactory().getObject());
       return transactionManager;
+   }
+
+   @Bean
+   public ModelMapper modelMapper() {
+      return new ModelMapper();
    }
 }
